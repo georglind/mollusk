@@ -18,7 +18,7 @@ import re
 
 
 def parse(molfile):
-    with open(molfile, "r") as mfile:
+    with open(molfile, "r", encoding="utf-8") as mfile:
         data = mfile.readlines()
 
     mol = (''.join(data)).splitlines()
