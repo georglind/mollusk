@@ -11,14 +11,14 @@
 from __future__ import division, print_function
 import numpy as np
 # import matplotlib.pyplot as plt
-import parser
+from . import parser
 
 
 def draw_mol(fig, ax, molfile):
     """
     Parse a mol file and draw it
     """
-    mol = molparser.parse(molfile)
+    mol = parser.parse(molfile)
 
     if not mol:
         return False

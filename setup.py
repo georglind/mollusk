@@ -1,11 +1,9 @@
+import os
 from setuptools import setup
+from setuptools.config import read_configuration
 
-setup(name='mollusk',
-      version='0.1',
-      description='Molecular Parser',
-      url='http://github.com/georglind/mol',
-      author='Kim G. L. Pedersen',
-      author_email='georglind@gmail.com',
-      license='MIT',
-      packages=['mol'],
-      zip_safe=False)
+cfg = read_configuration('./setup.cfg')
+#print(cfg)
+cfg["options"].update(cfg["metadata"])
+cfg=cfg["options"]
+setup(use_scm_version = True, **cfg)
